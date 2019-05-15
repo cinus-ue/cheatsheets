@@ -1,7 +1,51 @@
-git branch -a
-git status 
-git clone git@xxxx.xxxx.com:xxx/xxx.git
-git add .
-git commit -am ""
-git push origin master
-git pull 
+#GIT CHEAT SHEET
+
+## SETUP
+```
+$ git config --global user.name  "[firstname lastname]"
+$ git config --global user.email "[valid-email]"
+$ git config --global color.ui auto
+```
+
+## CREATE REPOSITORY
+```
+$ git clone ssh://user@domain.com:repo.git
+$ git init
+```
+## LOCAL CHANGES
+```
+$ git status 
+$ git diff
+$ git add .
+$ git commit -am "[message]"
+```
+
+## COMMIT HISTORY
+```
+$ git log
+```
+
+## BRANCHS & TAGS
+```
+$ git branch -a
+$ git tag [tag-name]
+```
+
+## UPDATE & PUBLISH
+```
+$ git push [alias] [branch]  / git push origin master 
+$ git pull 
+```
+
+## MERGE & REBASE
+```
+$ git merge  [branch]
+$ git rebase [branch]
+$ git rebase --abort
+$ git rebase --continue
+```
+## UNDO
+```
+$ git reset --hard HEAD
+$ git revert [commit]
+```

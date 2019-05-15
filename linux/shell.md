@@ -1,11 +1,11 @@
-# Shell Programming Cheat Sheet
+# SHELL PROGRAMMING CHEAT SHEET
 
-## Variables
+## VARIABLES
 ```
 now=$(date)
 now=`date`
 ```
-## Control structures
+## CONTROL STRUCTURES
 - if/then/else/fi
 - case/in/esac
 
@@ -33,15 +33,15 @@ esac
 ```
 - while/do/done
 
-## Test file and directory
+## TEST FILE AND DIRECTORY
 - `-d`: if a directory exists?
 - `-f`: if a file exists?
 - `-s`: is empty?
 
-## Date and Time
+## DATE AND TIME
 - [`date +"%A, %T, %B %d, %Y"`]: Friday, 10:10:00, June 30, 2016
 - [`date --date="next month"`]: next month|last month|5 days ago|tomorrow|next Sunday|
 - [`time <cmd>`]: timing
 
-## Threads
+## THREAD
 - `sleep 5s/5m/5h/5d`: waits 5 seconds/minutes/hours/days

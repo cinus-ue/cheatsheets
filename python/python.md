@@ -1,4 +1,6 @@
-## Regex
+#PYTHON CHEAT SHEET
+
+## REGEX
 ```python
 import re
 <str>   = re.sub(<regex>,new,text,count=0)
@@ -7,7 +9,7 @@ import re
 <Match> = re.search(<regex>,text)
 <Match_iter> = re.finditer(<regex>,text)
 ```
-## Match object
+## MATCH OBJECT
 ```python
 <str> = <Match>.group()  #whole match
 <str> = <Match>.group(1) #part in first bracket
@@ -15,21 +17,21 @@ import re
 <int> = <Match>.end()    #excusive end index of a match
 ```
 
-## Read file
+## READ FILE
 ```python
 def read_file{(ilename):
     with open(filename,encoding='utf-8') as file:
         return file.readlines()
 ```        
 
-## Write to file 
+## WRITE TO FILE
 ```python
 def write_to_file(filename,text):
     with open(filename,'w',encoding='utf-8') as file:
         file.write(text)
 ```
 
-## Hashlib
+## HASHLIB
 ```python
 >>>hashlib.md5(<str>.encode()).hexdigest()
 ```
