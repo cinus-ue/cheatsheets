@@ -1,4 +1,4 @@
-#PYTHON CHEAT SHEET
+# PYTHON CHEAT SHEET
 
 ## REGEX
 ```python

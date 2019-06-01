@@ -1,4 +1,4 @@
-#GIT CHEAT SHEET
+# GIT CHEAT SHEET
 
 ## SETUP
 ```
