@@ -4,6 +4,8 @@
 ```
 $ uname -a    ---display linux system information
 $ uname -r    ---display kernel release information
+$ uptime      ---show uptime
+$ mount       ---show mounted filesy­stems
 ```
 
 ## HARDWARE INFORMATION
@@ -41,20 +43,20 @@ $ watch df -h                  ---execute "df -h", showing periodic updates
 
 ## USER INFORMATION AND MANAGEMENT
 ```
-$ id                                ---display the user and group ids of your current user.
-$ last                              ---display the last users who have logged onto the system.
+$ id                                ---display the user and group ids of your current user
+$ last                              ---display the last users who have logged onto the system
 $ last -F                           ---display complete login & logout times
 $ last -x                           ---display last shutdown time
 $ last -x shutdown 
-$ who                               ---show who is logged into the system.
+$ who                               ---show who is logged into the system
 $ who -r                            ---display the current runlevel
 $ who -a                            ---list logged in users
 $ users
 $ who -b                            ---display the time of last system boot
-$ w                                 ---show who is logged in and what they are doing.
-$ groupadd test                     ---create a group named "test".
-$ useradd -c "content" -m test      ---create an account named test
-$ userdel test                      ---delete the test account.
+$ w                                 ---show who is logged in and what they are doing
+$ groupadd test                     ---create a group named "test"
+$ useradd -c "content" -m test      ---create an account named "test"
+$ userdel test                      ---delete the test account
 $ usermod -aG sales test            ---add test account to the sales group
 ```
 
@@ -68,7 +70,7 @@ $ rm -r dir-name                      ---remove the directory and its contents r
 $ rm -f file                          ---force removal of file without prompting for confirmation
 $ rm -rf dir-name                     ---forcefully remove directory recursively
 $ cp file1 file2                      ---copy file1 to file2
-$ cp -r source_dir destination        ---copy source_directory recursively to destination. 
+$ cp -r source_dir destination        ---copy source_directory recursively to destination
 $ ln -s /path/to/file linkname        ---create symbolic link to linkname
 $ less file                           ---browse through a text file
 $ tail -f file                     
@@ -77,7 +79,7 @@ $ tail -f file
 
 ```
 $ ps                        ---display your currently running processes
-$ ps -ef                    ---display all the currently running processes on the system.
+$ ps -ef                    ---display all the currently running processes on the system
 $ ps -ef | grep processname ---display process information for processname
 $ top                       ---display and manage the top processes
 $ htop                      ---interactive process viewer (top alternative)
@@ -130,30 +132,35 @@ $ whois domain         ---display whois information for domain
 $ dig domain           ---display DNS information for domain
 $ dig -x IP_ADDRESS    ---reverse lookup of IP_ADDRESS
 $ host domain          ---display DNS ip address for domain
-$ hostname -i          ---display the network address of the host name.
+$ hostname -i          ---display the network address of the host name
 $ hostname -I          ---display all local ip addresses
 $ netstat -nutlp       ---display listening tcp and udp ports and corresponding programs
+$ dig domain           ---get DNS information for domain
+$ dig -x host          ---reverse lookup host
+$ lsof -i tcp:1337     ---list all processes running on port 1337
 ```
-## ARCHIVES (TAR FILES)
+## ARCHIVES
 
 ```
-$ tar cf  archive.tar directory      ---create tar named archive.tar containing directory.
-$ tar xf  archive.tar                ---extract the contents from archive.tar.
-$ tar czf archive.tar.gz directory   ---create a gzip compressed tar file name archive.tar.gz.
-$ tar xzf archive.tar.gz             ---extract a gzip compressed tar file.
+$ tar cf  archive.tar directory      ---create tar named archive.tar containing directory
+$ tar xf  archive.tar                ---extract the contents from archive.tar
+$ tar czf archive.tar.gz directory   ---create a gzip compressed tar file name archive.tar.gz
+$ tar xzf archive.tar.gz             ---extract a gzip compressed tar file
 $ tar cjf archive.tar.bz2 directory  ---create a tar file with bzip2 compression
-$ tar xjf archive.tar.bz2            ---extract a bzip2 compressed tar file.
+$ tar xjf archive.tar.bz2            ---extract a bzip2 compressed tar file
+$ gzip file                          ---compresses file and renames it to file.gz
+$ gzip -d file.gz                    ---decompresses file.gz back to file
 ```
 
 ## INSTALLING PACKAGES
  
 ```
-$ yum search keyword    ---search for a package by keyword.
-$ yum install package   ---install package.
-$ yum info package      ---display description and summary information about package.
+$ yum search keyword    ---search for a package by keyword
+$ yum install package   ---install package
+$ yum info package      ---display description and summary information about package
 $ rpm -i package.rpm    ---install package from local file named package.rpm
-$ yum remove package    ---remove/uninstall package.
-$ tar zxvf sourcecode.tar.gz  ---install software from source code.
+$ yum remove package    ---remove/uninstall package
+$ tar zxvf sourcecode.tar.gz  ---install software from source code
 $ cd sourcecode
 $ ./configure
 $ make
@@ -166,7 +173,7 @@ $ make install
 $ grep pattern file                   ---search for pattern in file
 $ grep -r pattern directory           ---search recursively for pattern in directory
 $ locate name                         ---find files and directories by name
-$ find /home/dir-name -name 'prefix*' ---find files in /home/dir-name that start with "prefix".
+$ find /home/dir-name -name 'prefix*' ---find files in /home/dir-name that start with "prefix"
 $ find /home -size +100M              ---find files larger than 100MB in /home
 ```
 
@@ -209,6 +216,19 @@ $ du -sh     ---display total disk usage off the current directory
 $ cd ..    ---change into the parent directory
 $ cd       ---go to the $HOME directory
 ```
+## IO REDIRECTION 
+```
+$ cmd < file     ---input of cmd from file
+$ cmd1 <(cmd2)   ---output of cmd2 as file input to cmd1
+$ cmd > file     ---standard output (stdout) of cmd to file
+$ cmd > /dev/null  ---discard stdout of cmd
+$ cmd >> file    ---append stdout to file
+$ cmd 2> file    ---error output (stderr) of cmd to file
+$ cmd 1>&2       ---stdout to same place as stderr
+$ cmd 2>&1       ---stderr to same place as stdout
+$ cmd &> file    ---every output of cmd to file
+```
+
 
 ## SKILLS
 
@@ -226,5 +246,6 @@ $ while :;do echo "test";done
 $ history | grep pattern                    ---search history
 $ pstree -u                                 ---display the owner/user of a process
 $ which name                                ---search program file
+$ alias name 'command'                      ---create an alias for a command
 $ echo $?                                   ---last exit code
 ```
