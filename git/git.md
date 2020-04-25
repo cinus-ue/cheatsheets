@@ -23,6 +23,7 @@ $ git commit -am "[message]"
 ## COMMIT HISTORY
 ```
 $ git log
+$ git log -p [file]
 ```
 
 ## BRANCHS & TAGS
@@ -48,4 +49,18 @@ $ git rebase --continue
 ```
 $ git reset --hard HEAD
 $ git revert [commit]
+```
+## LFS
+```
+$ git lfs track "*.zip"
+$ git add .gitattributes
+$ git lfs ls-files
+```
+
+## IGNORING PATTERNS
+```
+logs/ 
+*.tmp
+~$*.doc*
+pattern*/
 ```
