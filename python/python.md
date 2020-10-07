@@ -1,20 +1,14 @@
 # PYTHON CHEAT SHEET
 
-## REGEX
+## FORMAT
 ```python
-import re
-<str>   = re.sub(<regex>,new,text,count=0)
-<list>  = re.findall(<regex>,text)
-<list>  = re.split(<regex>,text,maxsplit=0)
-<Match> = re.search(<regex>,text)
-<Match_iter> = re.finditer(<regex>,text)
+<str> = f'{<el_1>}, {<el_2>}'
+<str> = '{}, {}'.format(<el_1>, <el_2>)
 ```
-## MATCH OBJECT
+## LAMBDA
 ```python
-<str> = <Match>.group()  #whole match
-<str> = <Match>.group(1) #part in first bracket
-<int> = <Match>.start()  #start index of a match
-<int> = <Match>.end()    #excusive end index of a match
+<function> = lambda: <return_value>
+<function> = lambda <argument_1>, <argument_2>: <return_value>
 ```
 
 ## READ FILE
@@ -33,5 +27,54 @@ def write_to_file(filename,text):
 
 ## HASHLIB
 ```python
->>>hashlib.md5(<str>.encode()).hexdigest()
+hashlib.md5(<str>.encode()).hexdigest()
+```
+
+## PRINT
+```python
+print(<el_1>, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
+
+from pprint import pprint
+pprint(<collection>, width=80, depth=None, compact=False, sort_dicts=True)
+```
+
+## EXCEPTION
+```python
+class MyError(Exception):
+    pass
+class MyInputError(MyError):
+    pass
+
+raise <exception>
+raise <exception>()
+raise <exception>(<el> [, ...])
+
+try:
+    <code>
+except <exception>:
+    <code>
+
+```
+
+## TERNARY CONDITIONAL OPERATOR
+```python
+<expression1> if <condition> else <expression2>
+```
+
+## DATACLASS
+```python
+from dataclasses import dataclass, field
+
+@dataclass(order=False, frozen=False)
+class <class_name>:
+    <attr_name_1>: <type>
+    <attr_name_2>: <type> = <default_value>
+    <attr_name_3>: list/dict/set = field(default_factory=list/dict/set)
+```
+
+## COPY
+```python
+from copy import copy, deepcopy
+<object> = copy(<object>)
+<object> = deepcopy(<object>)
 ```
