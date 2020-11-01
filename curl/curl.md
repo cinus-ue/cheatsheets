@@ -2,6 +2,7 @@
 
 ## OPTIONS
 ```
+-O           # --output
 -o <file>    # --output: write to file
 -u user:pass # --user: Authentication
 -v           # --verbose
@@ -39,6 +40,22 @@
 -E, --cert <cert>     # --cert: Client cert file
     --cert-type       # der/pem/eng
 -k, --insecure        # for self-signed certs
+```
+
+## PROXY
+```
+-x <host:port>
+```
+
+## MULTIPART FORMPOST
+```
+-F name=value
+-F name=@file
+```
+
+## TIMEOUT
+```
+-m <seconds>
 ```
 
 ## EXAMPLES
