@@ -20,7 +20,7 @@ With re-encoding:
 ffmpeg -ss [start] -i in.mp4 -t [duration] -c:v libx264 -c:a aac -strict experimental -b:a 128k out.mp4
 
 ffmpeg -i <input> -ss 00:01:45 -t 00:02:35 -vcodec copy -acodec copy <output>
-ffmpeg -i <input> -vcodec copy -acodec copy -ss 00:00:00 -to 00:10:00 <input> -y
+ffmpeg -ss 00:00:00 -to 00:10:00 -i <input> -vcodec copy -acodec copy <output> -y
 ```
 
 ## EXTRACTING AUDIO STREAM
