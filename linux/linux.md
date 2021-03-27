@@ -229,6 +229,13 @@ $ cmd 2>&1       ---stderr to same place as stdout
 $ cmd &> file    ---every output of cmd to file
 ```
 
+## FILE DESCRIPTOR 
+```
+$ lsof -p $pid                 ---List file opened by a PID
+$ lsof -a -p $pid    
+$ lsof | wc -l                 ---Count all open file handles
+$ ls /proc/$pid/fd/ | wc -l    ---Count open file handles
+```
 
 ## SKILLS
 
@@ -249,3 +256,4 @@ $ which name                                ---search program file
 $ alias name 'command'                      ---create an alias for a command
 $ echo $?                                   ---last exit code
 ```
+
