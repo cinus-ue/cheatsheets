@@ -23,6 +23,19 @@ ffmpeg -i <input> -ss 00:01:45 -t 00:02:35 -vcodec copy -acodec copy <output>
 ffmpeg -ss 00:00:00 -to 00:10:00 -i <input> -vcodec copy -acodec copy <output> -y
 ```
 
+## ENCRYPTION
+```
+ffmpeg -i file.mp4 -vcodec copy -acodec copy -encryption_scheme cenc-aes-ctr -encryption_key <KEY> -encryption_kid <KEY IDENTIFIER> encryption.mp4
+
+-encryption_scheme <string> Configures the encryption scheme, allowed values are none, cenc-aes-ctr
+-encryption_key    <binary> The media encryption key (hex)
+-encryption_kid    <binary> The media encryption key identifier (hex)
+
+ffplay -i encryption.mp4 -decryption_key <KEY>
+
+ffmpeg -decryption_key <KEY> -i encryption.mp4 decryption.mp4
+```
+
 ## EXTRACTING AUDIO STREAM
 ```
 ffmpeg -i file.mp4 -vn -acodec copy output.aac 
