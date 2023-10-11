@@ -71,6 +71,11 @@ ffmpeg copy /b segment1_0_av.ts+segment2_0_av.ts+segment3_0_av.ts full.ts
 ffmpeg -i in.mp4 -i watermark.png -filter_complex "overlay=36:36" -codec:a copy out.mp4
 ```
 
+## CONVERTING
+```
+ffmpeg -y -i in.avi -vcodec h264 -acodec aac -strict -2 out.mp4
+```
+
 ## STREAMING
 ```
 ffmpeg -re -i ./1080P.264 -vcodec copy -f rtp rtp://127.0.0.1:80>rtp_h264.sdp
